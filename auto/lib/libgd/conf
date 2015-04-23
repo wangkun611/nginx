@@ -8,7 +8,7 @@
     ngx_feature_run=no
     ngx_feature_incs="#include <gd.h>"
     ngx_feature_path=
-    ngx_feature_libs="-lgd"
+    ngx_feature_libs="/usr/local/lib64/libgd.a /usr/local/lib64/libwebp.a -lpng -ljpeg"
     ngx_feature_test="gdImagePtr img = gdImageCreateFromGifPtr(1, NULL);"
     . auto/feature
 
