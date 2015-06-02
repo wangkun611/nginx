@@ -349,6 +349,9 @@ ngx_http_image_body_filter(ngx_http_request_t *r, ngx_chain_t *in)
 
         // test output type
         ctx->out_type = ngx_http_image_filter_get_value(r, conf->ofcv, conf->out_type);
+        if (ctx->out_type == NGX_HTTP_IMAGE_WEBP && ctx->type != NGX_HTTP_IMAGE_JPEG) {
+            ctx->out_type = ctx->type;
+        }
         if (ctx->out_type == NGX_HTTP_IMAGE_NONE) {
             ctx->out_type = ctx->type;
         }
